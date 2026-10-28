@@ -249,7 +249,7 @@ function Row({ k, v }: { k: string; v?: string }) {
   return (
     <div className="flex justify-between gap-4 border-b border-graphite/15 pb-2">
       <dt className="text-graphite/60">{k}</dt>
-      <dd className="text-right capitalize-first">{v ?? "—"}</dd>
+      <dd className="text-right first-letter:uppercase">{v ?? "—"}</dd>
     </div>
   );
 }
