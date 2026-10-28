@@ -17,7 +17,7 @@ const CartCtx = createContext<Ctx | null>(null);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [qty, setQtyMap] = useState<Record<string, number>>({});
   const value = useMemo<Ctx>(() => {
-    const lines = products.filter((p) => qty[p.id]).map((p) => ({ product: p, qty: qty[p.id] }));
+    const lines = products.filter((p) => qty[p.id]).map((p) => ({ product: p, qty: qty[p.id] ?? 0 }));
     return {
       lines,
       count: lines.reduce((a, l) => a + l.qty, 0),
