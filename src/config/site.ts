@@ -8,9 +8,9 @@ export const site = {
   fullName: "FORMA. Barber Studio",
   city: "Montevideo (demo)",
   /** Número en formato internacional sin "+", ej: 59899123456. Se lee de VITE_WHATSAPP_NUMBER. */
-  whatsappNumber: (import.meta.env.VITE_WHATSAPP_NUMBER as string | undefined)?.trim() || null,
-  instagramUrl: (import.meta.env.VITE_INSTAGRAM_URL as string | undefined)?.trim() || null,
-  tiktokUrl: (import.meta.env.VITE_TIKTOK_URL as string | undefined)?.trim() || null,
+  whatsappNumber: (import.meta.env["VITE_WHATSAPP_NUMBER"] as string | undefined)?.trim() || null,
+  instagramUrl: (import.meta.env["VITE_INSTAGRAM_URL"] as string | undefined)?.trim() || null,
+  tiktokUrl: (import.meta.env["VITE_TIKTOK_URL"] as string | undefined)?.trim() || null,
   address: null as string | null,
   credit: "Demo comercial por NeztLabs",
 };

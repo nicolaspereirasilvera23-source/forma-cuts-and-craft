@@ -2,7 +2,7 @@ import { barbers, type Barber } from "@/data/demo";
 import type { BookingProvider, BookingRequest, BookingResult, Slot } from "./types";
 
 const toMin = (t: string) => {
-  const [h, m] = t.split(":").map(Number);
+  const [h = 0, m = 0] = t.split(":").map(Number);
   return h * 60 + m;
 };
 const toTime = (m: number) =>
