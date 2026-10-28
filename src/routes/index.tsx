@@ -36,7 +36,7 @@ function Home() {
         />
         <div className="hero-scrim absolute inset-0 -z-10" aria-hidden />
         <div className="mx-auto flex h-full max-w-[1440px] flex-col items-center justify-end px-5 pb-14 text-center md:px-10 md:pb-20">
-          <h1 className="text-[clamp(3.4rem,13vw,12rem)] leading-[0.82]">
+          <h1 className="text-[clamp(4.25rem,15vw,12rem)] leading-[0.82]">
             El estilo
             <br />
             <em>te define.</em>

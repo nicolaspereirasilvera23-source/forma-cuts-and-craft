@@ -40,7 +40,7 @@ function Contact() {
       <section className="relative">
         <SmartImage src={interior} alt="Interior de FORMA. con sillas de barbero y paredes verde oliva" width={1536} height={1024} className="h-[60svh] min-h-[380px] w-full object-cover" />
         <div className="mx-auto max-w-[1440px] px-5 md:px-10">
-          <h1 className="-mt-[0.55em] text-[clamp(3.5rem,12vw,11rem)] leading-[0.85] text-graphite">
+          <h1 className="mt-6 text-[clamp(3.5rem,12vw,11rem)] leading-[0.85] text-graphite">
             Pasá <em className="text-olive">por casa.</em>
           </h1>
         </div>
