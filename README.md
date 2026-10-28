@@ -1,29 +1,27 @@
-# Welcome to your Lovable project
+# FORMA. Barber Studio — demo NeztLabs
 
-This project was built with [Lovable](https://lovable.dev).
+Sitio demo multipágina para barberías: `/` home, `/tienda` The Grooming Shop, `/agenda` reservas (simuladas), `/contacto`.
 
-## Build with Lovable
+## Personalizar
+- **Marca, ciudad, dirección**: `src/config/site.ts`
+- **Barberos, servicios, precios, productos, trabajos**: `src/data/demo.ts`
+- **Fotos**: `src/assets/` (reemplazar archivos manteniendo nombre, o cambiar imports en `demo.ts`)
+- **Colores y tipografías**: `src/styles.css` (tokens) y links de fuentes en `src/routes/__root.tsx`
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Variables de entorno
+| Variable | Uso |
+|---|---|
+| `VITE_WHATSAPP_NUMBER` | Número internacional sin `+` (ej. `598…`). Activa consultas prellenadas en tienda y contacto. |
+| `VITE_INSTAGRAM_URL` | URL completa del perfil. |
+| `VITE_TIKTOK_URL` | URL completa del perfil. |
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+Sin configurar, la UI muestra "Configuración pendiente". No se inventan datos.
 
-## Development
+## Agenda
+- Regla: 1 barbero = 1 silla = 1 calendario. No se exige elegir servicio.
+- Hoy: `src/lib/booking/mock-provider.ts` (disponibilidad simulada, nada se guarda).
+- Producción: implementar `BookingProvider` (`src/lib/booking/types.ts`) con server functions sobre PostgreSQL,
+  `UNIQUE (barber_id, starts_at)` y `INSERT` transaccional para reservas atómicas.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Tests
+`bunx vitest run`
