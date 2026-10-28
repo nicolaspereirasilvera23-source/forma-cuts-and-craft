@@ -245,7 +245,7 @@ function Agenda() {
   );
 }
 
-function Row({ k, v }: { k: string; v?: string }) {
+function Row({ k, v }: { k: string; v?: string | undefined }) {
   return (
     <div className="flex justify-between gap-4 border-b border-graphite/15 pb-2">
       <dt className="text-graphite/60">{k}</dt>
