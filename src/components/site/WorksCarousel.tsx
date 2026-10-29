@@ -20,7 +20,7 @@ export function WorksCarousel() {
     const el = track.current;
     if (!el) return;
     const card = el.querySelector("figure");
-    const w = card ? card.getBoundingClientRect().width + 20 : 300;
+    const w = card ? card.getBoundingClientRect().width + 12 : 300;
     const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
     if (dir === 1 && atEnd) el.scrollTo({ left: 0, behavior: reduced ? "auto" : "smooth" });
     else el.scrollBy({ left: dir * w, behavior: reduced ? "auto" : "smooth" });
@@ -29,7 +29,10 @@ export function WorksCarousel() {
   useEffect(() => {
     if (paused || hovering) return;
     const id = setInterval(() => step(1), 4000);
-    return (
+    return () => clearInterval(id);
+  }, [paused, hovering, step]);
+
+  return (
     <section id="trabajos" aria-roledescription="carrusel" aria-label="Trabajos de ejemplo" className="bg-ivory">
       <div className="forma-container grid gap-6 py-7 md:grid-cols-[1fr_2.4fr] md:py-8">
         <div className="flex flex-col justify-center">
