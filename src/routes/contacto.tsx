@@ -14,6 +14,8 @@ export const Route = createFileRoute("/contacto")({
       { name: "description", content: "Cómo llegar, horarios y redes de FORMA. Barber Studio. Datos de demostración pendientes de configurar." },
       { property: "og:title", content: "Contacto — FORMA. Barber Studio" },
       { property: "og:description", content: "Ubicación, horarios y redes. Sitio demo." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contact,
@@ -35,18 +37,18 @@ function Contact() {
   ];
 
   return (
-    <div className="bg-ivory pt-16 md:pt-20">
+    <div className="bg-ivory pt-16 md:pt-24">
       {/* Fachada: imagen arquitectónica con título anclado abajo */}
       <section className="relative">
-        <SmartImage src={interior} alt="Interior de FORMA. con sillas de barbero y paredes verde oliva" width={1536} height={1024} className="h-[60svh] min-h-[380px] w-full object-cover" />
-        <div className="mx-auto max-w-[1440px] px-5 md:px-10">
-          <h1 className="mt-6 text-[clamp(3.5rem,12vw,11rem)] leading-[0.85] text-graphite">
+        <SmartImage src={interior} alt="Interior de FORMA. con sillas de barbero y paredes verde oliva" width={1536} height={1024} className="h-[42svh] min-h-[280px] w-full object-cover" />
+        <div className="mx-auto max-w-[1360px] px-5 md:px-10">
+          <h1 className="mt-6 text-6xl md:text-8xl leading-[0.85] text-graphite">
             Pasá <em className="text-olive">por casa.</em>
           </h1>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-[1440px] gap-14 px-5 py-16 md:grid-cols-12 md:px-10 md:py-24">
+      <section className="mx-auto grid max-w-[1360px] gap-14 px-5 py-16 md:grid-cols-12 md:px-10 md:py-14">
         <div className="md:col-span-5">
           <p className="text-lg leading-relaxed">
             Un estudio chico, de tres sillas, con luz natural y música baja. Venís, te sentás con
@@ -82,7 +84,7 @@ function Contact() {
       </section>
 
       <section className="bg-olive text-ivory">
-        <div className="mx-auto max-w-[1440px] px-5 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[1360px] px-5 py-16 md:px-10 md:py-14">
           <h2 className="text-[clamp(2.5rem,6vw,5rem)]">Escribinos</h2>
           <ul className="mt-10 divide-y divide-ivory/20 border-y border-ivory/20">
             {channels.map((c) => (
@@ -104,7 +106,7 @@ function Contact() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-[1440px] gap-10 px-5 py-16 md:grid-cols-3 md:px-10 md:py-24">
+      <section className="mx-auto grid max-w-[1360px] gap-10 px-5 py-16 md:grid-cols-3 md:px-10 md:py-14">
         <div>
           <h2 className="text-3xl">Si es tu primera vez</h2>
           <p className="mt-3 text-sm text-graphite/80">Traé una foto de referencia si tenés. Si no, lo resolvemos en la silla.</p>
