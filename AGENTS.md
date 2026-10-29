@@ -13,5 +13,3 @@
 - Demo content lives in `src/data/demo.ts` and brand/contact config in `src/config/site.ts`; never hardcode business data in routes (keeps the demo re-skinnable per client).
 - Booking goes through the `BookingProvider` interface in `src/lib/booking/`; swap the mock for a DB-backed provider instead of changing UI (enables atomic Postgres bookings later).
 - Contact numbers/socials come only from `VITE_*` env vars; show a "pending configuration" state when missing (never invent contact data).
-
-- Homepage composition uses shared editorial layout classes in `src/styles.css`; commerce and booking actions reuse the existing cart and BookingProvider flows to keep presentation independent of demo logic.

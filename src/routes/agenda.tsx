@@ -19,8 +19,6 @@ export const Route = createFileRoute("/agenda")({
       { name: "description", content: "Elegí barbero o primera disponibilidad, fecha y hora. Agenda de demostración con disponibilidad simulada." },
       { property: "og:title", content: "Agenda — FORMA. Barber Studio" },
       { property: "og:description", content: "Elegí tu barbero, día y hora. Demo con disponibilidad simulada." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Agenda,
@@ -76,7 +74,7 @@ function Agenda() {
 
   if (result?.ok && slot && date) {
     return (
-      <div className="bg-olive pt-16 text-ivory md:pt-24">
+      <div className="bg-olive pt-16 text-ivory md:pt-20">
         <div className="mx-auto max-w-3xl px-5 py-20 md:py-32" role="status" aria-live="polite">
           <span className="label-tech text-beige">Simulación · {result.reference}</span>
           <h1 className="mt-4 text-[clamp(3rem,9vw,7rem)] leading-[0.9]">Así quedaría tu turno.</h1>
@@ -99,10 +97,10 @@ function Agenda() {
   }
 
   return (
-    <div className="bg-ivory pt-16 md:pt-24">
-      <div className="mx-auto grid max-w-[1200px] gap-10 px-5 py-12 md:px-10 md:py-12 lg:grid-cols-[1fr_320px]">
+    <div className="bg-ivory pt-16 md:pt-20">
+      <div className="mx-auto grid max-w-[1200px] gap-10 px-5 py-12 md:px-10 md:py-20 lg:grid-cols-[1fr_320px]">
         <div>
-          <h1 className="text-5xl md:text-6xl leading-[0.9]">Reservá tu turno</h1>
+          <h1 className="text-[clamp(3rem,8vw,6rem)] leading-[0.9]">Reservá tu turno</h1>
           <DemoNotice className="mt-6 max-w-2xl">
             Agenda de demostración: la disponibilidad es simulada y la confirmación no genera una reserva real.
           </DemoNotice>

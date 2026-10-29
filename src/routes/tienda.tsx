@@ -17,8 +17,6 @@ export const Route = createFileRoute("/tienda")({
       { name: "description", content: "Arcilla, pomada, shampoo, aceite para barba y más. Precios en pesos uruguayos. Consultas por WhatsApp." },
       { property: "og:title", content: "The Grooming Shop — FORMA." },
       { property: "og:description", content: "Productos de grooming que usamos en la silla. Precios en UYU." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Shop,
@@ -38,9 +36,9 @@ function Shop() {
   const wa = whatsappLink(waMsg);
 
   return (
-    <div className="bg-ivory pt-16 md:pt-12">
-      <header className="mx-auto grid max-w-[1360px] gap-8 px-5 pb-8 pt-10 md:grid-cols-12 md:px-10 md:pt-12">
-        <h1 className="text-6xl md:text-8xl leading-[0.85] md:col-span-8">
+    <div className="bg-ivory pt-16 md:pt-20">
+      <header className="mx-auto grid max-w-[1440px] gap-8 px-5 pb-10 pt-14 md:grid-cols-12 md:px-10 md:pt-24">
+        <h1 className="text-[clamp(3.2rem,10vw,9rem)] leading-[0.85] md:col-span-8">
           The Grooming
           <br />
           <em className="text-olive">Shop</em>
@@ -50,8 +48,8 @@ function Shop() {
         </p>
       </header>
 
-      <div className="sticky top-16 z-30 border-y border-border bg-ivory/95 backdrop-blur-sm md:top-24">
-        <div role="group" aria-label="Filtrar por categoría" className="no-scrollbar mx-auto flex max-w-[1360px] gap-2 overflow-x-auto px-5 py-3 md:px-10">
+      <div className="sticky top-16 z-30 border-y border-border bg-ivory/95 backdrop-blur-sm md:top-20">
+        <div role="group" aria-label="Filtrar por categoría" className="no-scrollbar mx-auto flex max-w-[1440px] gap-2 overflow-x-auto px-5 py-3 md:px-10">
           {(["Todo", ...categories] as const).map((c) => (
             <button
               key={c}
@@ -66,7 +64,7 @@ function Shop() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-[1360px] gap-12 px-5 py-12 md:px-10 lg:grid-cols-12">
+      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-12 md:px-10 lg:grid-cols-12">
         <div className="lg:col-span-8">
           {!feature ? (
             <p className="py-20 text-center text-muted-foreground">No hay productos en esta categoría.</p>
