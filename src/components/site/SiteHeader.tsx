@@ -34,19 +34,19 @@ export function SiteHeader() {
         overHero ? "bg-transparent text-ivory" : "bg-ivory/95 text-graphite border-b border-border backdrop-blur-sm",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:h-20 md:px-10">
-        <Link to="/" className="flex items-baseline gap-2" aria-label="FORMA. Barber Studio, inicio">
+      <div className="mx-auto flex h-16 max-w-[1360px] items-center justify-between px-5 md:h-24 md:px-10">
+        <Link to="/" className="flex flex-col items-start gap-1" aria-label="FORMA. Barber Studio, inicio">
           <span className="font-display text-3xl leading-none">FORMA.</span>
-          <span className="label-tech hidden opacity-70 sm:inline">Barber Studio</span>
+          <span className="text-[8px] uppercase opacity-70">Barber Studio</span>
         </Link>
 
-        <nav aria-label="Principal" className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-7 md:flex">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
               activeOptions={{ exact: true }}
-              className="text-sm tracking-wide opacity-80 transition-opacity hover:opacity-100 data-[status=active]:opacity-100 data-[status=active]:underline data-[status=active]:underline-offset-8"
+              className="text-[10px] uppercase opacity-80 transition-opacity hover:opacity-100 data-[status=active]:opacity-100 data-[status=active]:underline data-[status=active]:underline-offset-8"
             >
               {n.label}
             </Link>
@@ -66,10 +66,10 @@ export function SiteHeader() {
               </span>
             )}
           </Link>
-          <Button asChild variant={overHero ? "hero" : "ink"} size="sm" className="hidden h-10 px-5 sm:inline-flex">
-            <Link to="/agenda">Reservá tu turno</Link>
+          <Button asChild variant={overHero ? "hero" : "ink"} size="sm" className="hidden h-9 px-5 sm:inline-flex">
+            <Link to="/agenda">Reservar turno</Link>
           </Button>
-          <button
+          <Button variant="ghost" size="icon"
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center md:hidden"
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -78,7 +78,7 @@ export function SiteHeader() {
             onClick={() => setOpen((v) => !v)}
           >
             {open ? <X className="size-6" /> : <Menu className="size-6" />}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -94,7 +94,7 @@ export function SiteHeader() {
             ))}
           </ul>
           <Button asChild variant="default" size="xl" className="mt-8 w-full uppercase tracking-[0.14em] text-xs">
-            <Link to="/agenda">Reservá tu turno</Link>
+            <Link to="/agenda">Reservar turno</Link>
           </Button>
         </nav>
       )}
